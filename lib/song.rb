@@ -43,7 +43,7 @@ class Song
     if find_by_name(name_of_song) == false 
       self.create_by_name(name_of_song)
     else 
-      find_by_name(name_of_song)
+      self.find_by_name(name_of_song)
     end
   end
   
