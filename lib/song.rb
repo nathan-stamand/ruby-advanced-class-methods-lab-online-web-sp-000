@@ -48,4 +48,8 @@ class Song
     end
   end
   
+  def self.alphabetical 
+    @@all.sort do {|song1, song2|song1.name <=> song2.name}
+  end
+  
 end
