@@ -45,6 +45,7 @@ class Song
       self.find_by_name(name_of_song)   
     else 
       self.create_by_name(name_of_song)
+      nil
     end
   end
   
