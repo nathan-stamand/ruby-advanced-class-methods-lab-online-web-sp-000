@@ -30,20 +30,21 @@ class Song
   end
   
   def self.find_by_name(name_of_song)
+    name_array = []
     @@all.each do |song| 
-      @@all.find(name_of_song) {|song|song.name == name_of_song}
-      if song.name == name_of_song 
-        return song 
+      name_array << song.name 
+      if name_array.any?(name_of_song)
+        return song
       end
     end
     false
   end
   
   def self.find_or_create_by_name(name_of_song)
-    if find_by_name(name_of_song) == false 
-      self.create_by_name(name_of_song)
+    if self.find_by_name(name_of_song) == true
+      puts self.find_by_name(name_of_song)   
     else 
-      self.find_by_name(name_of_song)
+      self.create_by_name(name_of_song)
     end
   end
   
